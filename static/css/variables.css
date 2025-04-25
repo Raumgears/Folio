@@ -1,0 +1,17 @@
+:root {
+    /* Couleurs principales */
+    --eerie-black: #1A1A1A;
+    --atomic-tangerine: #F98948;
+    --emerald: #0CCE6B;
+    --pear: #DCED31;
+    --teal: #468189;
+  
+    /* Variations de thème (optionnelles) */
+    --dark-bg: var(--eerie-black);
+    --primary: var(--atomic-tangerine);
+    --secondary: var(--emerald);
+    --highlight: var(--pear);
+    --muted: var(--teal);
+    --text-light: #FFFFFF;
+    --text-muted: #AAAAAA;
+  }

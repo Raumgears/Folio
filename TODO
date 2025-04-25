@@ -1,0 +1,14 @@
+Serveur : 
+    Installer Docker
+    Créer un autre user
+    Interdire connection root à distance
+    Interdire connection via password
+    Créer tunnel entre Le serv et un serv Cloudflare
+
+PortFolio : 
+    Finir contenu
+    CSS
+    Conteneuriser
+
+Donner le conteneur au serveur
+Déployer
