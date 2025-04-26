@@ -10,7 +10,9 @@ export function init() {
         })
     })
     initBackground()
-    downloadCV()
+    if (window.location.pathname == "/" ) {
+        downloadCV()
+    }
 }
 
 function downloadCV() {

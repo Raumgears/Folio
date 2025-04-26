@@ -48,7 +48,7 @@
 }
 
 .project-link {
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--dark-bg);
     padding: 0.5rem;
     border-radius: 50%;
     display: flex;
