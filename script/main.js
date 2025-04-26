@@ -10,8 +10,15 @@ export function init() {
         })
     })
     initBackground()
+    downloadCV()
 }
 
+function downloadCV() {
+    document.getElementById('button-cv').addEventListener('click', () => {
+        // Remplacez par le lien réel vers votre CV
+        window.open('../static/files/CV.pdf', '_blank')
+    })
+}
 export function debounce(func, wait) {
     let timer
     return function debouncedFunc(...args) {
