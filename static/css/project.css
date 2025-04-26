@@ -56,7 +56,7 @@
 }
 
 .project-link:hover {
-    background: var(--primary);
+    background: var(--secondary);
     transform: scale(1.1);
 }
 
