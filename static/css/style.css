@@ -1,6 +1,6 @@
 /* ===== SECTIONS ===== */
 section {
-    padding: 3rem 10% 2rem;
+    padding: 2rem 10% 2rem;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -34,4 +34,55 @@ h2::after {
     width: 50%;
     height: 3px;
     background-color: var(--secondary);
+}
+
+/* >-----------< */
+
+.about-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Permet le retour à la ligne sur mobile */
+}
+
+/* Style pour le lien Contact */
+#about a {
+    background: var(--primary);
+    color: var(--dark-bg);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+#about a:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Style pour le bouton Download CV */
+#button-cv {
+    background: var(--primary);
+    color: var(--dark-bg);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+#button-cv:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Alignement des éléments */
+#about a, 
+#button-cv {
+    font-size: 1rem;
 }
