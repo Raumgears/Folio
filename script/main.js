@@ -10,7 +10,9 @@ export function init() {
         })
     })
     initBackground()
-    downloadCV()
+    if (window.location.pathname == "/" ) {
+        downloadCV()
+    }
 }
 
 function downloadCV() {
@@ -19,6 +21,7 @@ function downloadCV() {
         window.open('../static/files/CV.pdf', '_blank')
     })
 }
+
 export function debounce(func, wait) {
     let timer
     return function debouncedFunc(...args) {
