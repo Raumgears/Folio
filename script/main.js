@@ -1,5 +1,4 @@
-import { initBackground } from "./eyes.js"
-
+import { createEye, eyeEvents, randomizeEye} from './eyes.js'
 export function init() {
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -9,17 +8,25 @@ export function init() {
             })
         })
     })
+   
     initBackground()
     if (window.location.pathname == "/" ) {
-        downloadCV()
+        viewCV()
     }
 }
 
-function downloadCV() {
-    document.getElementById('button-cv').addEventListener('click', () => {
-        // Remplacez par le lien réel vers votre CV
-        window.open('../static/files/CV.pdf', '_blank')
-    })
+export function initBackground() {
+    document.querySelectorAll(".eye").forEach((eye) => {eye.remove()})
+
+    const nbEye = 10
+    const backgroundDiv = document.getElementById("background")
+    for(let i = 0; i < nbEye; i++) {
+        let eye = createEye(i)
+        randomizeEye(eye)
+        backgroundDiv.appendChild(eye)
+    }
+
+    eyeEvents()
 }
 
 export function debounce(func, wait) {

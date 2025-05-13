@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ALM PF</title>
+        <title>Abel Lebourgeois-Maitre</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/static/css/variables.css">
         <link rel="stylesheet" href="/static/css/style.css">
@@ -32,7 +32,8 @@
         
         <section id="home">
             <h1>Welcome ! I'm Abel</h1>
-            <p>Student Developer • Code Apprentice • Stack Explorer</p>
+            <h3>Student Full Stack Developer • Code Apprentice</h3>
+            <p></p>
         </section>
         
         <section id="about">
@@ -45,10 +46,6 @@
                 
             Currently seeking apprenticeship in order to extend my knowledge and sharpen my technical skills through real-world code and building useful products.
             </p>
-            <div class="about-buttons">
-                <a href="#contact">Contact ⬇</a>
-                <button id="button-cv">See CV ⮕</button>
-            </div>
         </section>
 
         <section id="skills">
@@ -64,10 +61,6 @@
                     <a id="cardJS" class="skill-card" href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener">
                         <img src="./static/assets/javascript.svg">
                         <span>JavaScript</span>
-                    </a>
-                    <a id="cardTS" class="skill-card" href="https://www.typescriptlang.org/" target="_blank" rel="noopener">
-                        <img src="./static/assets/typescript.svg">
-                        <span>TypeScript</span>
                     </a>
                     <a id="cardSQLite" class="skill-card" href="https://www.sqlite.org/" target="_blank" rel="noopener">
                         <img src="./static/assets/sqlite.svg">
@@ -94,7 +87,7 @@
                         <span>Git</span>
                     </a>
                 </div>
-                <span>Learning ongoing :</span>
+                <span>Learning ongoing / Want to learn :</span>
                 <div class="skills-sub-container">
                     <a id="cardRust" class="skill-card" href="https://www.rust-lang.org/" target="_blank" rel="noopener">
                         <img src="./static/assets/rust.svg">
@@ -107,6 +100,10 @@
                     <a id="cardNode" class="skill-card" href="https://nodejs.org/" target="_blank" rel="noopener">
                         <img src="./static/assets/nodedotjs.svg">
                         <span>Node.js</span>
+                    </a>
+                    <a id="cardTS" class="skill-card" href="https://www.typescriptlang.org/" target="_blank" rel="noopener">
+                        <img src="./static/assets/typescript.svg">
+                        <span>TypeScript</span>
                     </a>
                     <a id="cardPostgreSQL" class="skill-card" href="https://www.postgresql.org/" target="_blank" rel="noopener">
                         <img src="./static/assets/postgresql.svg" alt="PostgreSQL Logo">
@@ -127,7 +124,7 @@
                 </div>   
             </div>
             <div class="skills-container">
-                <h3>Skills</h3>
+                <h3>Tech Skills</h3>
                 <div class="skills-sub-container-2">
                     <div class="skill-card-2">
                         <img src="./static/assets/web.svg" alt="Web Development" class="skill-icon">
@@ -173,6 +170,38 @@
                     </div>
                 </div>
             </div>
+            <div class="skills-container">
+                <h3>Languages</h3>
+                <div class="skill-lang">
+                    <div class="bar-lang-label">
+                        <span>Français</span>
+                        <span>Native</span>
+                    </div>
+                    <progress max="100" value="100"></progress>
+                </div>
+                <div class="skill-lang">
+                    <div class="bar-lang-label">
+                        <span>English</span>
+                        <span>75% (B2)</span>
+                    </div>
+                    <progress max="100" value="75"></progress>
+                </div>
+                <div class="skill-lang">
+                    <div class="bar-lang-label">
+                        <span>Español</span>
+                        <span>20%</span>
+                    </div>
+                    <progress max="100" value="20"></progress>
+                </div>
+            </div>
+            <div class="skills-container">
+                <h3>Soft Skills</h3>
+                <a id="linkEmageME" class="skill-link" href="https://cv.emage-me.com/me/abel-lebourgeoismaitre" target="_blank">
+                    <div class="link-text">
+                        <span>Advises from fellow Students & School ⮕</span>
+                    </div>
+                </a>
+            </div>
         </section>
         
         <section id="projects">
@@ -180,7 +209,7 @@
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./static/assets/forum-placeholder.jpg" alt="Capture du projet" loading="lazy">
+                        <img src="./static/files/fishrum.png" alt="Capture du projet" loading="lazy">
                         <div class="project-links">
                             <a href="https://github.com/Raumgears/ForumZ01.git" class="project-link" target="_blank">
                                 <img src="./static/assets/github.svg">
@@ -218,7 +247,7 @@
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./static/assets/project-placeholder.jpg" alt="Capture du projet" loading="lazy">
+                        <img src="./static/files/lemin.png" alt="Capture du projet" loading="lazy">
                         <div class="project-links">
                             <a href="https://github.com/Raumgears/LemInZ01.git" class="project-link" target="_blank">
                                 <img src="./static/assets/github.svg">
@@ -283,9 +312,15 @@
             <h2>
             <span>Hey,</span>
             <span>Wanna Talk ?</span> 
-            </h2>
-            <div id="linksContainer" class="contact-card">
-                <h3>Some links</h3>
+        </h2>
+        <div id="linksContainer" class="contact-card">
+            <h3>Some links</h3>
+                <a id="linkCV" class="contact-link" href="./static/files/CV.pdf" download>
+                    <img class="contact-icon" src="./static/assets/CV.svg">
+                    <div class="link-text">
+                        <h4>CV</h4>
+                    </div>
+                </a>
                 <a id="linkEmail" class="contact-link" href="mailto:abel.lebourgeoismaitre@gmail.com">
                 <img class="contact-icon" src="./static/assets/mail.svg">
                 <div class="link-text">
@@ -317,10 +352,19 @@
                 </form>
             </div>
         </section>
+<!--         <footer>
+            <div>
+                <a href="/">Abel Lebourgeois-Maitre</a>
+                <h3>Student Full Stack Developer • Code Apprentice</h3>
+                <div>
+                    <p>Rights Reserved</p>
+                </div>
+            </div>
+        </footer> -->
 
-        <script type="module">
+        <!-- <script type="module">
             import { init } from "./script/main.js"
             init()
-        </script>
+        </script> -->
     </body>
 </html>

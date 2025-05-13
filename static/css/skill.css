@@ -33,7 +33,8 @@
 }
 
 .skill-card,
-.skill-card-2 {
+.skill-card-2,
+.skill-lang {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +43,20 @@
     border-radius: 12px;
     transition: all 0.3s ease;
     text-decoration: none;
+}
+
+.skill-link {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-card:hover {
