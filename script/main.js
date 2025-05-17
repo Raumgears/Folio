@@ -8,6 +8,10 @@ export function init() {
             })
         })
     })
+    document.querySelectorAll('progress').forEach(progress => {
+        const value = progress.getAttribute('value')
+        progress.style.setProperty('--progress-width', `${value}%`)
+    })
    
     initBackground()
     if (window.location.pathname == "/" ) {
@@ -36,3 +40,4 @@ export function debounce(func, wait) {
         timer = setTimeout(() => func(...args), wait)
     }
 }
+
