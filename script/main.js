@@ -1,4 +1,4 @@
-import { createEye, eyeEvents, randomizeEye} from './eyes.js'
+import { allEyes, createEye, randomizeEye, resetEyePositions} from './eyes.js'
 export function init() {
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -12,25 +12,22 @@ export function init() {
         const value = progress.getAttribute('value')
         progress.style.setProperty('--progress-width', `${value}%`)
     })
-   
+    console.log("before :",allEyes)
     initBackground()
-    if (window.location.pathname == "/" ) {
-        viewCV()
-    }
 }
 
 export function initBackground() {
-    document.querySelectorAll(".eye").forEach((eye) => {eye.remove()})
-
-    const nbEye = 10
+    resetEyePositions()
+    
+    const nbEye = 50
     const backgroundDiv = document.getElementById("background")
     for(let i = 0; i < nbEye; i++) {
         let eye = createEye(i)
-        randomizeEye(eye)
-        backgroundDiv.appendChild(eye)
+        const loaded = randomizeEye(eye, backgroundDiv)
     }
+    console.log("after :", allEyes)
 
-    eyeEvents()
+ /*    eyeEvents() */
 }
 
 export function debounce(func, wait) {
