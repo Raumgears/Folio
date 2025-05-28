@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Abel Lebourgeois-Maitre</title>
+        <link rel="icon" href="./static/assets/eye.svg" type="image/x-icon" sizes="16x16 32x32">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/static/css/variables.css">
         <link rel="stylesheet" href="/static/css/style.css">
@@ -288,7 +289,7 @@
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="./static/assets/project-placeholder.jpg" alt="Capture du projet" loading="lazy">
+                        <img src="./static/files/graphql.png" alt="Capture du projet" loading="lazy">
                         <div class="project-links">
                             <a href="https://github.com/Raumgears/GraphQLZ01.git" class="project-link" target="_blank">
                                 <img src="./static/assets/github.svg">
@@ -311,46 +312,48 @@
 
         <section id="contact">
             <h2>
-            <span>Hey,</span>
-            <span>Wanna Talk ?</span> 
-        </h2>
-        <div id="linksContainer" class="contact-card">
-            <h3>Some links</h3>
-                <a id="linkCV" class="contact-link" href="./static/files/CV.pdf" download>
-                    <img class="contact-icon" src="./static/assets/CV.svg">
+                <span>Hey,</span>
+                <span>Wanna Talk ?</span> 
+            </h2>
+            <div class="linkGrid">
+                <div id="linksContainer" class="contact-card">
+                    <h3>Some links</h3>
+                    <a id="linkCV" class="contact-link" href="./static/files/CV.pdf" download>
+                        <img class="contact-icon" src="./static/assets/CV.svg">
+                        <div class="link-text">
+                            <h4>CV</h4>
+                        </div>
+                    </a>
+                    <a id="linkEmail" class="contact-link" href="mailto:abel.lebourgeoismaitre@gmail.com">
+                    <img class="contact-icon" src="./static/assets/mail.svg">
                     <div class="link-text">
-                        <h4>CV</h4>
+                        <h4>Mail</h4>
+                        <span>abel.lebourgeoismaitre@gmail.com</span>
                     </div>
-                </a>
-                <a id="linkEmail" class="contact-link" href="mailto:abel.lebourgeoismaitre@gmail.com">
-                <img class="contact-icon" src="./static/assets/mail.svg">
-                <div class="link-text">
-                    <h4>Mail</h4>
-                    <span>abel.lebourgeoismaitre@gmail.com</span>
+                    </a>
+                    <a id="linkLinkedIn" class="contact-link" href="https://linkedin.com/in/abel-lebourgeois-maitre-360069343" target="_blank">
+                        <img class="contact-icon" src="./static/assets/linkedin.svg">
+                        <div class="link-text">
+                            <h4>LinkedIn</h4>
+                            <span>linkedin.com/in/abel-lebourgeois-maitre<span>
+                        </div>
+                    </a>
+                    <a id="linkGitHub" class="contact-link" href="https://github.com/Raumgears" target="_blank">
+                        <img class="contact-icon" src="./static/assets/github.svg">
+                        <div class="link-text">
+                            <h4>github</h4>
+                            <span>github.com/Raumgears</span>
+                        </div>
+                    </a>
                 </div>
-                </a>
-                <a id="linkLinkedIn" class="contact-link" href="https://linkedin.com/in/abel-lebourgeois-maitre-360069343" target="_blank">
-                    <img class="contact-icon" src="./static/assets/linkedin.svg">
-                    <div class="link-text">
-                        <h4>LinkedIn</h4>
-                        <span>linkedin.com/in/abel-lebourgeois-maitre<span>
-                    </div>
-                </a>
-                <a id="linkGitHub" class="contact-link" href="https://github.com/Raumgears" target="_blank">
-                    <img class="contact-icon" src="./static/assets/github.svg">
-                    <div class="link-text">
-                        <h4>github</h4>
-                        <span>github.com/Raumgears</span>
-                    </div>
-                </a>
-            </div>
-            <div id="mailFormContainer" class="contact-card">
-                <h3>Send me a Mail</h3>
-                <form id="mailForm" method="POST" action="https://formsubmit.co/abel.lebourgeoismaitre@gmail.com">
-                    <textarea type="text" name="name" placeholder="Write your message here !" required></textarea>
-                    <input type="email" name="email" placeholder="your@email.ext" required>
-                    <button type="submit">Send Email</button>
-                </form>
+                <div id="mailFormContainer" class="contact-card">
+                    <h3>Send me a Mail</h3>
+                    <form id="mailForm" method="POST" action="https://formsubmit.co/abel.lebourgeoismaitre@gmail.com">
+                        <textarea type="text" name="name" placeholder="Write your message here !" required></textarea>
+                        <input type="email" name="email" placeholder="your@email.ext" required>
+                        <button type="submit">Send Email</button>
+                    </form>
+                </div>
             </div>
         </section>
 <!--         <script type="module">
