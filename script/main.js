@@ -19,11 +19,11 @@ export function init() {
 export function initBackground() {
     resetEyePositions()
     
-    const nbEye = 50
+    const nbEye = 100
     const backgroundDiv = document.getElementById("background")
     for(let i = 0; i < nbEye; i++) {
         let eye = createEye(i)
-        const loaded = randomizeEye(eye, backgroundDiv)
+        randomizeEye(eye, backgroundDiv)
     }
     console.log("after :", allEyes)
 
