@@ -156,36 +156,32 @@ export function randomizeEye(eye, backgroundDiv) {
 
         if (iris && pupil) {
             const eyeMoves = (event) => {
-                const mouseX = event.clientX !== undefined ? event.clientX : lastMousePosition.x;
-                const mouseY = event.clientY !== undefined ? event.clientY : lastMousePosition.y;
+                const mouseX = event.clientX !== undefined ? event.clientX : lastMousePosition.x
+                const mouseY = event.clientY !== undefined ? event.clientY : lastMousePosition.y
 
                 if (event.clientX !== undefined && event.clientY !== undefined) {
-                    lastMousePosition.x = event.clientX;
-                    lastMousePosition.y = event.clientY;
+                    lastMousePosition.x = event.clientX
+                    lastMousePosition.y = event.clientY
                 }
 
-                const eyeBounds = eye.getBoundingClientRect() // Get the eye's position and size
+                const eyeBounds = eye.getBoundingClientRect()
 
-                // Calculate the relative position of the mouse within the eye
-                const relativeX = mouseX - eyeBounds.left - eyeBounds.width / 2;
-                const relativeY = mouseY - eyeBounds.top - eyeBounds.height / 2;
+                const relativeX = mouseX - eyeBounds.left - eyeBounds.width / 2
+                const relativeY = mouseY - eyeBounds.top - eyeBounds.height / 2
 
-                // Rotate the relative position based on the eye's rotation angle
-                const angleRad = (-rotationAngle * Math.PI) / 180; // Convert angle to radians
-                const rotatedX = relativeX * Math.cos(angleRad) - relativeY * Math.sin(angleRad);
-                const rotatedY = relativeX * Math.sin(angleRad) + relativeY * Math.cos(angleRad);
+                const angleRad = (-rotationAngle * Math.PI) / 180
+                const rotatedX = relativeX * Math.cos(angleRad) - relativeY * Math.sin(angleRad)
+                const rotatedY = relativeX * Math.sin(angleRad) + relativeY * Math.cos(angleRad)
         
-                // Constrain the movement to the bounds of the eye
                 const maxOffsetX = 100
                 const maxOffsetY = 50
-                const offsetX = Math.max(-maxOffsetX, Math.min(maxOffsetX, rotatedX));
-                const offsetY = Math.max(-maxOffsetY, Math.min(maxOffsetY, rotatedY));
+                const offsetX = Math.max(-maxOffsetX, Math.min(maxOffsetX, rotatedX))
+                const offsetY = Math.max(-maxOffsetY, Math.min(maxOffsetY, rotatedY))
 
-                // Update the position of the iris and pupil within the SVG
-                iris.setAttribute("cx", 250 + offsetX); // 250 is the center of the eye in the SVG
-                iris.setAttribute("cy", 250 + offsetY);
-                pupil.setAttribute("cx", 250 + offsetX);
-                pupil.setAttribute("cy", 250 + offsetY);
+                iris.setAttribute("cx", 250 + offsetX)
+                iris.setAttribute("cy", 250 + offsetY)
+                pupil.setAttribute("cx", 250 + offsetX)
+                pupil.setAttribute("cy", 250 + offsetY)
             }
             document.addEventListener("mousemove", eyeMoves)
             document.addEventListener("scroll", () => {eyeMoves({})})
