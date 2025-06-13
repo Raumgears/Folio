@@ -143,35 +143,53 @@ export function randomizeEye(eye, backgroundDiv) {
         const iris = eye.querySelector("#iris")
         const pupil = eye.querySelector("#pupil")
         const all = eye.querySelector("#all")
-
+        
         all.setAttribute('stroke', rdmColor)
         pupil.setAttribute('fill', rdmColor)
         iris.setAttribute('r', rdmSize.i)
         pupil.setAttribute('r', rdmSize.p)
 
-        /* const eyeBounds = eye.getBoundingClientRect(); // Get the eye's position and size
-        const irisGroup = eye.querySelector("g[mask]"); // The group containing the pupil and iris
-
-        if (irisGroup) {
-            document.addEventListener("mousemove", (event) => {
-                const mouseX = event.clientX;
-                const mouseY = event.clientY;
-    
-                // Calculate the relative position of the mouse within the eye
-                const relativeX = mouseX - eyeBounds.left;
-                const relativeY = mouseY - eyeBounds.top;
-    
-                // Constrain the movement to the bounds of the eye
-                const maxOffset = 50; // Maximum movement offset for the iris
-                const offsetX = Math.max(-maxOffset, Math.min(maxOffset, relativeX - eyeBounds.width / 2));
-                const offsetY = Math.max(-maxOffset, Math.min(maxOffset, relativeY - eyeBounds.height / 2));
-    
-                // Apply the transformation to the iris group
-                irisGroup.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
-            });
-        } */
-
         backgroundDiv.appendChild(eye)
+        
+        const rotationAngle = parseFloat(eye.style.rotate) || 0;
+        let lastMousePosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+
+        if (iris && pupil) {
+            const eyeMoves = (event) => {
+                const mouseX = event.clientX !== undefined ? event.clientX : lastMousePosition.x;
+                const mouseY = event.clientY !== undefined ? event.clientY : lastMousePosition.y;
+
+                if (event.clientX !== undefined && event.clientY !== undefined) {
+                    lastMousePosition.x = event.clientX;
+                    lastMousePosition.y = event.clientY;
+                }
+
+                const eyeBounds = eye.getBoundingClientRect() // Get the eye's position and size
+
+                // Calculate the relative position of the mouse within the eye
+                const relativeX = mouseX - eyeBounds.left - eyeBounds.width / 2;
+                const relativeY = mouseY - eyeBounds.top - eyeBounds.height / 2;
+
+                // Rotate the relative position based on the eye's rotation angle
+                const angleRad = (-rotationAngle * Math.PI) / 180; // Convert angle to radians
+                const rotatedX = relativeX * Math.cos(angleRad) - relativeY * Math.sin(angleRad);
+                const rotatedY = relativeX * Math.sin(angleRad) + relativeY * Math.cos(angleRad);
+        
+                // Constrain the movement to the bounds of the eye
+                const maxOffsetX = 100
+                const maxOffsetY = 50
+                const offsetX = Math.max(-maxOffsetX, Math.min(maxOffsetX, rotatedX));
+                const offsetY = Math.max(-maxOffsetY, Math.min(maxOffsetY, rotatedY));
+
+                // Update the position of the iris and pupil within the SVG
+                iris.setAttribute("cx", 250 + offsetX); // 250 is the center of the eye in the SVG
+                iris.setAttribute("cy", 250 + offsetY);
+                pupil.setAttribute("cx", 250 + offsetX);
+                pupil.setAttribute("cy", 250 + offsetY);
+            }
+            document.addEventListener("mousemove", eyeMoves)
+            document.addEventListener("scroll", () => {eyeMoves({})})
+        }
     }
 }
 
@@ -179,12 +197,3 @@ export function resetEyePositions() {
     document.querySelectorAll(".eye").forEach((eye) => {eye.remove()})
     allEyes.length = 0
 }
-
-/* export function eyeEvents() {
-    document.addEventListener("mousemove", function (e) {
-        console.log(e.clientX, e.clientY) 
-        // T'ES ICI FDP
-    })
-    window.addEventListener("resize", debounce(initBackground, 500))
-}
- */

@@ -12,7 +12,6 @@ export function init() {
         const value = progress.getAttribute('value')
         progress.style.setProperty('--progress-width', `${value}%`)
     })
-    console.log("before :",allEyes)
     initBackground()
 }
 
@@ -25,9 +24,6 @@ export function initBackground() {
         let eye = createEye(i)
         randomizeEye(eye, backgroundDiv)
     }
-    console.log("after :", allEyes)
-
- /*    eyeEvents() */
 }
 
 export function debounce(func, wait) {
